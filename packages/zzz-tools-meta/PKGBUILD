@@ -1,0 +1,51 @@
+# Maintainer: Cipher Zero <cs.zongzi@gmail.com>
+
+pkgname=zzz-tools-meta
+pkgver=1
+pkgrel=1
+pkgdesc='Meta package for tools'
+arch=(any)
+license=(None)
+url='https://github.com/betula-space/AUR-Repo'
+depends=(
+  # Shell
+  bash-completion
+  oh-my-zsh-git
+  starship
+  zsh
+
+  # Cloud Service
+  aws-cli
+
+  # Network
+  alex
+  aria2
+  bind
+  fping
+  hping
+  httping
+  iperf3
+  iptraf-ng
+  mtr
+  nload
+  openbsd-netcat
+  openssh
+  rsync
+  wget
+
+  # Monitor
+  htop
+  lm_sensors
+  lsof
+  strace
+
+  # VCS
+  git
+  stow
+
+  # Pacman
+  downgrade
+  pacman-contrib
+  pacutils
+  reflector
+)

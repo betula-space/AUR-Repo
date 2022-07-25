@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!PKGBUILD
+!craft_table.png
+!hmcl-launch-script
+!hmcl.desktop

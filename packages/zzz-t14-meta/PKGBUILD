@@ -1,0 +1,126 @@
+# Maintainer: Cipher Zero <cs.zongzi@gmail.com>
+
+pkgname=zzz-t14-meta
+pkgver=1
+pkgrel=1
+pkgdesc='Meta package for KDE Environment running on ThinkPad T14'
+arch=(any)
+license=(None)
+url='https://github.com/betula-space/AUR-Repo'
+depends=(
+  # Kernel
+  intel-ucode
+  linux
+  linux-headers
+  linux-firmware
+
+  # Kernel Modules / Microcode / Drivers
+  acpi_call
+  alsa-ucm-conf
+  bbswitch
+  intel-gpu-tools
+  intel-media-driver
+  intel-ucode
+  libva-intel-driver
+  libva-utils
+  sof-firmware
+  v4l2loopback-dkms
+  v4l2loopback-utils
+  vulkan-intel
+
+  # Base system
+  archlinuxcn-keyring
+  base
+  efibootmgr
+
+  # Base Desktop Environment
+  jack2
+  papirus-icon-theme
+  pipewire-v4l2
+  plasma-meta
+  plasma-wayland-session
+  pulseaudio
+  qpwgraph
+  wireplumber
+  xdg-desktop-portal
+
+  # Fcitx
+  fcitx5
+  fcitx5-chinese-addons
+  fcitx5-configtool
+  fcitx5-gtk
+  fcitx5-material-color
+  fcitx5-nord
+  fcitx5-pinyin-moegirl
+  fcitx5-pinyin-zhwiki
+  fcitx5-qt
+
+  # Media Lib
+  libavif
+  libheif
+  libjxl
+  openexr
+  dav1d
+  flac
+  libjpeg-turbo
+  libogg
+  libpng
+  librsvg
+  gst-libav
+  gst-plugin-pipewire
+  gst-plugins-bad
+  gst-plugins-good
+  gstreamer-vaapi
+
+  # KDE Applications and their optional dependencies
+  ark
+  lrzip
+  lzop
+  p7zip
+  unarchiver
+  unrar
+  elisa
+  dragon
+  dolphin
+  dolphin-plugins
+  gwenview
+  kamera
+  kimageformats
+  qt5-imageformats
+  filelight
+  ffmpegthumbs
+  kalarm
+  kcharselect
+  kcalc
+  kdeconnect
+  kdialog
+  sshfs
+  kcolorchooser
+  kdegraphics-thumbnailers
+  kdenetwork-filesharing
+  kgpg
+  kio-extras
+  icoutils
+  kactivities-stats
+  libappimage
+  taglib
+  kleopatra
+  kompare
+  krdc
+  freerdp
+  keditbookmarks
+  libssh
+  libvncserver
+  konsole
+  konversation
+  kwalletmanager
+  kwrite
+  ksystemlog
+  okular
+  ebook-tools
+  kdegraphics-mobipocket
+  partitionmanager
+  spectacle
+  svgpart
+  sweeper
+)

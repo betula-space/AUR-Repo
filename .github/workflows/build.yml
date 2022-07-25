@@ -1,0 +1,35 @@
+name: Build Packages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '15 */6 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    container:
+      image: archlinux:base-devel
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        id: prepare
+        run: |
+          pacman-key --init
+          pacman -Syu aws-cli git openssh p7zip pacman-contrib rsync zsh --noconfirm --noprogressbar
+          curl -s ${{ secrets.DATA_URL }} -o /${GITHUB_WORKSPACE}/data.7z
+          echo "::set-output name=key::$(xxh128sum /${GITHUB_WORKSPACE}/data.7z | sed 's/ .*//')"
+          7z x /${GITHUB_WORKSPACE}/data.7z -o/${GITHUB_WORKSPACE} -p${{ secrets.DATA_PASSWD }}
+
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: /home/aur-build/.cache
+          key: ${{ steps.prepare.outputs.key }}
+
+      - name: Build
+        run: zsh /${GITHUB_WORKSPACE}/scripts/build.zsh

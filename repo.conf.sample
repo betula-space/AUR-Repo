@@ -1,0 +1,24 @@
+# Repo name
+REPO_NAME='betula'
+
+# GPG key ID
+GPGKEY='DE06721B6FA4D5E3'
+
+# makepkg configuration
+MAKEPKG_CONF="
+CFLAGS='-O2 -pipe -fno-plt'
+CXXFLAGS='${CFLAGS}'
+MAKEFLAGS='-j$(nproc)'
+BUILDENV=(!distcc !color !ccache check sign)
+GPGKEY='$GPGKEY'
+PACKAGER='Betula Space <touch@betula.space>'
+COMPRESSZST=(zstd -c -z -q --threads=0 -)
+PKGEXT='.pkg.tar.zst'
+"
+
+# Archive password
+PASSWORD='123123'
+
+# AUR repo server
+SERVER='betula@11.22.33.44:/srv/betula-aur/repo/x86_64'
+DATA='betula@11.22.33.44:/srv/betula-aur/data.7z'

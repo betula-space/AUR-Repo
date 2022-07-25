@@ -1,0 +1,60 @@
+# Maintainer: Cipher Zero <cs.zongzi@gmail.com>
+
+pkgname=zzz-dev-meta
+pkgver=1
+pkgrel=1
+pkgdesc='Meta package for development'
+arch=(any)
+license=(None)
+url='https://github.com/betula-space/AUR-Repo'
+depends=(
+  # Include all packages from base-devel group
+  autoconf
+  automake
+  binutils
+  bison
+  fakeroot
+  file
+  findutils
+  flex
+  gawk
+  gcc
+  gettext
+  grep
+  groff
+  gzip
+  libtool
+  m4
+  make
+  pacman
+  patch
+  pkgconf
+  sed
+  sudo
+  texinfo
+  which
+
+  # C/C++
+  gdb
+  clang
+  lld
+  lldb
+  libc++
+
+  # Golang
+  go
+  go-tools
+
+  # Node.js
+  nvm
+
+  # Neovim / Vim
+  vim
+  neovide
+  neovim
+
+  # GUI Tools
+  apifox
+  navicat16-premium-en
+  visual-studio-code-bin
+)

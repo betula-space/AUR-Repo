@@ -1,0 +1,24 @@
+# Maintainer: Betula Space <touch@betula.space>
+
+pkgname=apifox
+pkgver=2.1.30
+pkgrel=1
+pkgdesc="API 文档、API 调试、API Mock、API 自动化测试"
+arch=("x86_64")
+url="https://www.apifox.cn/"
+license=('custom')
+depends=('c-ares' 'ffmpeg' 'gtk3' 'libevent' 'libxslt' 'minizip' 'nss' 're2' 'snappy')
+source=(
+  "https://cdn.apifox.cn/download/Apifox-linux-latest.zip"
+  "apifox.desktop")
+sha256sums=(
+  '1bf61366e19ff3bb56617b0b1185a1b6ef9511fff8e9766686dc98de79937ee6'
+  '861671f8fc692cf82e633487549ec74fda37188069141aaa27856348a1dfacb5')
+options=(!strip)
+
+package() {
+  install -Dm755 "${srcdir}/Apifox.AppImage" "${pkgdir}/opt/apifox/Apifox.AppImage"
+  install -Dm644 "${srcdir}/apifox.desktop" "${pkgdir}/usr/share/applications/apifox.desktop"
+  mkdir -p "${pkgdir}/usr/bin"
+  ln -sf "${pkgdir}/opt/apifox/Apifox.AppImage" "${pkgdir}/usr/bin"
+}

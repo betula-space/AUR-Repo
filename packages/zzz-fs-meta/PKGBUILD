@@ -1,0 +1,31 @@
+# Maintainer: Cipher Zero <cs.zongzi@gmail.com>
+
+pkgname=zzz-fs-meta
+pkgver=1
+pkgrel=1
+pkgdesc='Meta package for file systems'
+arch=(any)
+license=(None)
+url='https://github.com/betula-space/AUR-Repo'
+depends=(
+  # LVM
+  lvm2
+
+  # Journaling
+  btrfs-progs
+  dosfstools
+  exfatprogs
+  f2fs-tools
+  e2fsprogs
+  jfsutils
+  nilfs-utils
+  udftools
+  xfsprogs
+
+  # Read-only
+  erofs-utils
+  squashfs-tools
+
+  # FUSE
+  cryfs
+)
